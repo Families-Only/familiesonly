@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Families Only – Keanu Reeves</title>
+  <style>
+    /* Reset & Base */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    header {
+      background: rgba(0,0,0,0.7);
+      padding: 3rem 1rem;
+      text-align: center;
+      animation: fadeIn 1.5s ease;
+    }
+    header h1 {
+      font-size: 3rem;
+      color: #ffd700;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.8rem;
+      color: #ddd;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      padding: 2rem;
+      animation: fadeInUp 2s ease;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.1);
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      text-align: center;
+      transition: transform 0.3s, background 0.3s;
+    }
+    .card:hover {
+      transform: translateY(-8px) scale(1.05);
+      background: rgba(255,255,255,0.2);
+    }
+    .card h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      color: #ffd700;
+    }
+    .card p {
+      font-size: 1rem;
+      margin-bottom: 1.2rem;
+    }
+    .card a {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: #ff4757;
+      color: white;
+      font-weight: bold;
+      border-radius: 25px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .card a:hover {
+      background: #e84118;
+    }
+
+    footer {
+      background: rgba(0,0,0,0.7);
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+      font-size: 0.9rem;
+      animation: fadeIn 2s ease;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Families Only</h1>
+    <p>The official connection hub for Keanu Reeves</p>
+  </header>
+
+  <main>
+    <div class="card">
+      <h2>📅 Book an Appointment</h2>
+      <p>Schedule a meeting through Keanu Reeves' management team.</p>
+      <a href="mailto:appointments@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>🤝 Sponsorship</h2>
+      <p>Support projects, films, and events.</p>
+      <a href="mailto:sponsors@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>🛍 Merchandise</h2>
+      <p>Request official merchandise (via management only).</p>
+      <a href="mailto:merch@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>🎟 Fan Card</h2>
+      <p>Join Families Only and get your fan card.</p>
+      <a href="mailto:fans@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>💝 Donate to Charity</h2>
+      <p>Support Keanu Reeves' philanthropic projects.</p>
+      <a href="mailto:charity@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>🚀 Partnership</h2>
+      <p>Partner with Keanu Reeves and his ventures.</p>
+      <a href="mailto:partners@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+
+    <div class="card">
+      <h2>💼 Job Vacancies</h2>
+      <p>Apply to join the management and Families Only team.</p>
+      <a href="mailto:jobs@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+    </div>
+  </main>
+
+  <footer>
+    &copy; 2025 Families Only. All rights reserved.
+  </footer>
+
+  <script>
+    // JS: Confirm popup when someone clicks a button
+    function confirmAction(e) {
+      let proceed = confirm("You are about to contact Keanu Reeves' official management. Continue?");
+      if (!proceed) e.preventDefault();
+    }
+  </script>
+</body>
+</html>
