@@ -9,39 +9,66 @@
     * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
       overflow-x: hidden;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #1e3c72, #2a5298);
+      position: relative;
+    }
+
+    /* Animated background */
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: url("https://i.ibb.co/4t8pS2r/keanu-bg.jpg") no-repeat center center/cover;
+      filter: brightness(0.4) blur(3px);
+      z-index: -2;
+    }
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: linear-gradient(120deg, rgba(30,60,114,0.6), rgba(42,82,152,0.6));
+      animation: gradientMove 15s ease infinite alternate;
+      z-index: -1;
+    }
+    @keyframes gradientMove {
+      from { background-position: 0% 50%; }
+      to { background-position: 100% 50%; }
     }
 
     /* Navbar */
     nav {
       position: sticky;
       top: 0;
-      background: rgba(0,0,0,0.85);
+      background: rgba(0,0,0,0.7);
       padding: 0.8rem 1rem;
       display: flex;
       justify-content: center;
       z-index: 1000;
+      backdrop-filter: blur(6px);
     }
     nav a {
       color: #ffd700;
       margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
-      transition: color 0.3s;
+      transition: all 0.3s;
     }
-    nav a:hover { color: #ff4757; }
+    nav a:hover { color: #ff4757; text-shadow: 0 0 8px #ffd700; }
 
     header {
-      background: rgba(0,0,0,0.7);
-      padding: 3rem 1rem;
+      padding: 4rem 1rem;
       text-align: center;
       animation: fadeIn 1.5s ease;
     }
     header h1 {
       font-size: 3rem;
       color: #ffd700;
+      text-shadow: 0 0 15px rgba(255,215,0,0.7);
     }
     header p {
       font-size: 1.2rem;
@@ -70,21 +97,24 @@
     /* Gallery */
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1rem;
-      margin-top: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1.5rem;
+      margin-top: 2rem;
     }
     .gallery img {
       width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
-      transition: transform 0.3s;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+      transition: transform 0.4s, filter 0.4s;
     }
     .gallery img:hover {
-      transform: scale(1.05);
+      transform: scale(1.08);
+      filter: brightness(1.2);
     }
 
-    /* Grid Cards (existing section) */
+    /* Grid Cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -94,9 +124,10 @@
       background: rgba(255,255,255,0.1);
       padding: 1.5rem;
       border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       text-align: center;
       transition: transform 0.3s, background 0.3s;
+      backdrop-filter: blur(8px);
     }
     .card:hover {
       transform: translateY(-8px) scale(1.05);
@@ -119,10 +150,11 @@
       font-weight: bold;
       border-radius: 25px;
       text-decoration: none;
-      transition: background 0.3s;
+      transition: background 0.3s, box-shadow 0.3s;
     }
     .card a:hover {
       background: #e84118;
+      box-shadow: 0 0 15px rgba(255,71,87,0.8);
     }
 
     footer {
@@ -131,7 +163,7 @@
       padding: 1rem;
       margin-top: 2rem;
       font-size: 0.9rem;
-      animation: fadeIn 2s ease;
+      backdrop-filter: blur(6px);
     }
 
     /* Animations */
@@ -194,9 +226,9 @@
   <section id="gallery">
     <h2>Photo Gallery</h2>
     <div class="gallery">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Keanu_Reeves_2013.jpg/330px-Keanu_Reeves_2013.jpg" alt="Keanu 1" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Keanu_Reeves_2019.jpg/330px-Keanu_Reeves_2019.jpg" alt="Keanu 2" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Keanu_Reeves_2009.jpg/330px-Keanu_Reeves_2009.jpg" alt="Keanu 3" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Keanu_Reeves_2013.jpg" alt="Keanu 1" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Keanu_Reeves_2019.jpg" alt="Keanu 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Keanu_Reeves_2009.jpg" alt="Keanu 3" />
     </div>
   </section>
 
