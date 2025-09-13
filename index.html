@@ -6,13 +6,32 @@
   <title>Families Only – Keanu Reeves</title>
   <style>
     /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: linear-gradient(135deg, #1e3c72, #2a5298);
       color: #fff;
       overflow-x: hidden;
     }
+
+    /* Navbar */
+    nav {
+      position: sticky;
+      top: 0;
+      background: rgba(0,0,0,0.85);
+      padding: 0.8rem 1rem;
+      display: flex;
+      justify-content: center;
+      z-index: 1000;
+    }
+    nav a {
+      color: #ffd700;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav a:hover { color: #ff4757; }
 
     header {
       background: rgba(0,0,0,0.7);
@@ -30,14 +49,47 @@
       color: #ddd;
     }
 
-    main {
+    section {
+      padding: 3rem 2rem;
+      animation: fadeInUp 1.2s ease;
+    }
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      margin-bottom: 1.5rem;
+      color: #ffd700;
+    }
+    section p {
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+      line-height: 1.6;
+      color: #eee;
+    }
+
+    /* Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.5);
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    /* Grid Cards (existing section) */
+    .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
       gap: 1.5rem;
-      padding: 2rem;
-      animation: fadeInUp 2s ease;
     }
-
     .card {
       background: rgba(255,255,255,0.1);
       padding: 1.5rem;
@@ -50,8 +102,8 @@
       transform: translateY(-8px) scale(1.05);
       background: rgba(255,255,255,0.2);
     }
-    .card h2 {
-      font-size: 1.5rem;
+    .card h3 {
+      font-size: 1.3rem;
       margin-bottom: 1rem;
       color: #ffd700;
     }
@@ -94,61 +146,109 @@
   </style>
 </head>
 <body>
+  <!-- Navbar -->
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Past Projects</a>
+    <a href="#upcoming">Upcoming</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#connect">Connect</a>
+  </nav>
+
+  <!-- Hero -->
   <header>
     <h1>Families Only</h1>
     <p>The official connection hub for Keanu Reeves</p>
   </header>
 
-  <main>
-    <div class="card">
-      <h2>📅 Book an Appointment</h2>
-      <p>Schedule a meeting through Keanu Reeves' management team.</p>
-      <a href="mailto:appointments@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-    </div>
+  <!-- About -->
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      Keanu Reeves is an actor, musician, philanthropist, and entrepreneur. Known for iconic roles in 
+      <em>The Matrix</em>, <em>John Wick</em>, and <em>Speed</em>, he has captivated audiences worldwide 
+      with his talent and humility. Beyond acting, he co-founded Arch Motorcycle Company, 
+      played bass for the band Dogstar, and actively supports charitable causes.
+    </p>
+  </section>
 
-    <div class="card">
-      <h2>🤝 Sponsorship</h2>
-      <p>Support projects, films, and events.</p>
-      <a href="mailto:sponsors@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-    </div>
+  <!-- Past Projects -->
+  <section id="projects">
+    <h2>Past Projects & Movies</h2>
+    <p>
+      From action-packed thrillers to heartfelt dramas, Keanu Reeves has starred in numerous 
+      blockbusters including <em>Point Break</em>, <em>Constantine</em>, and <em>Bill & Ted’s Excellent Adventure</em>.
+    </p>
+  </section>
 
-    <div class="card">
-      <h2>🛍 Merchandise</h2>
-      <p>Request official merchandise (via management only).</p>
-      <a href="mailto:merch@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-    </div>
+  <!-- Upcoming -->
+  <section id="upcoming">
+    <h2>Upcoming Movies & Projects</h2>
+    <p>
+      Stay tuned for exciting upcoming projects — from new films in development to music with Dogstar 
+      and innovations with Arch Motorcycle.
+    </p>
+  </section>
 
-    <div class="card">
-      <h2>🎟 Fan Card</h2>
-      <p>Join Families Only and get your fan card.</p>
-      <a href="mailto:fans@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+  <!-- Gallery -->
+  <section id="gallery">
+    <h2>Photo Gallery</h2>
+    <div class="gallery">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e5/Keanu_Reeves_2013.jpg/330px-Keanu_Reeves_2013.jpg" alt="Keanu 1" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Keanu_Reeves_2019.jpg/330px-Keanu_Reeves_2019.jpg" alt="Keanu 2" />
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Keanu_Reeves_2009.jpg/330px-Keanu_Reeves_2009.jpg" alt="Keanu 3" />
     </div>
+  </section>
 
-    <div class="card">
-      <h2>💝 Donate to Charity</h2>
-      <p>Support Keanu Reeves' philanthropic projects.</p>
-      <a href="mailto:charity@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+  <!-- Connect Section -->
+  <section id="connect">
+    <h2>Connect with Management</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>📅 Book an Appointment</h3>
+        <p>Schedule a meeting through Keanu Reeves' management team.</p>
+        <a href="mailto:appointments@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>🤝 Sponsorship</h3>
+        <p>Support projects, films, and events.</p>
+        <a href="mailto:sponsors@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>🛍 Merchandise</h3>
+        <p>Request official merchandise (via management only).</p>
+        <a href="mailto:merch@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>🎟 Fan Card</h3>
+        <p>Join Families Only and get your fan card.</p>
+        <a href="mailto:fans@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>💝 Donate to Charity</h3>
+        <p>Support Keanu Reeves' philanthropic projects.</p>
+        <a href="mailto:charity@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>🚀 Partnership</h3>
+        <p>Partner with Keanu Reeves and his ventures.</p>
+        <a href="mailto:partners@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
+      <div class="card">
+        <h3>💼 Job Vacancies</h3>
+        <p>Apply to join the management and Families Only team.</p>
+        <a href="mailto:jobs@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+      </div>
     </div>
+  </section>
 
-    <div class="card">
-      <h2>🚀 Partnership</h2>
-      <p>Partner with Keanu Reeves and his ventures.</p>
-      <a href="mailto:partners@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-    </div>
-
-    <div class="card">
-      <h2>💼 Job Vacancies</h2>
-      <p>Apply to join the management and Families Only team.</p>
-      <a href="mailto:jobs@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-    </div>
-  </main>
-
+  <!-- Footer -->
   <footer>
     &copy; 2025 Families Only. All rights reserved.
   </footer>
 
   <script>
-    // JS: Confirm popup when someone clicks a button
+    // Confirm popup when clicking a contact button
     function confirmAction(e) {
       let proceed = confirm("You are about to contact Keanu Reeves' official management. Continue?");
       if (!proceed) e.preventDefault();
