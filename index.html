@@ -4,287 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Families Only – Keanu Reeves</title>
-  <style>
-    /* Reset & Base */
-    * { margin: 0; padding: 0; box-sizing: border-box; scroll-behavior: smooth; }
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      color: #fff;
-      overflow-x: hidden;
-      min-height: 100vh;
-      background: linear-gradient(135deg, #1e3c72, #2a5298);
-      position: relative;
-    }
-
-    /* Animated background */
-    body::before {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: url("https://i.ibb.co/4t8pS2r/keanu-bg.jpg") no-repeat center center/cover;
-      filter: brightness(0.4) blur(3px);
-      z-index: -2;
-    }
-    body::after {
-      content: "";
-      position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: linear-gradient(120deg, rgba(30,60,114,0.6), rgba(42,82,152,0.6));
-      animation: gradientMove 15s ease infinite alternate;
-      z-index: -1;
-    }
-    @keyframes gradientMove {
-      from { background-position: 0% 50%; }
-      to { background-position: 100% 50%; }
-    }
-
-    /* Navbar */
-    nav {
-      position: sticky;
-      top: 0;
-      background: rgba(0,0,0,0.7);
-      padding: 0.8rem 1rem;
-      display: flex;
-      justify-content: center;
-      z-index: 1000;
-      backdrop-filter: blur(6px);
-    }
-    nav a {
-      color: #ffd700;
-      margin: 0 1rem;
-      text-decoration: none;
-      font-weight: bold;
-      transition: all 0.3s;
-    }
-    nav a:hover { color: #ff4757; text-shadow: 0 0 8px #ffd700; }
-
-    header {
-      padding: 4rem 1rem;
-      text-align: center;
-      animation: fadeIn 1.5s ease;
-    }
-    header h1 {
-      font-size: 3rem;
-      color: #ffd700;
-      text-shadow: 0 0 15px rgba(255,215,0,0.7);
-    }
-    header p {
-      font-size: 1.2rem;
-      margin-top: 0.8rem;
-      color: #ddd;
-    }
-
-    section {
-      padding: 3rem 2rem;
-      animation: fadeInUp 1.2s ease;
-    }
-    section h2 {
-      text-align: center;
-      font-size: 2rem;
-      margin-bottom: 1.5rem;
-      color: #ffd700;
-    }
-    section p {
-      max-width: 800px;
-      margin: auto;
-      text-align: center;
-      line-height: 1.6;
-      color: #eee;
-    }
-
-    /* Gallery */
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-    .gallery img {
-      width: 100%;
-      height: 300px;
-      object-fit: cover;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.6);
-      transition: transform 0.4s, filter 0.4s;
-    }
-    .gallery img:hover {
-      transform: scale(1.08);
-      filter: brightness(1.2);
-    }
-
-    /* Grid Cards */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.5rem;
-    }
-    .card {
-      background: rgba(255,255,255,0.1);
-      padding: 1.5rem;
-      border-radius: 15px;
-      box-shadow: 0 6px 20px rgba(0,0,0,0.4);
-      text-align: center;
-      transition: transform 0.3s, background 0.3s;
-      backdrop-filter: blur(8px);
-    }
-    .card:hover {
-      transform: translateY(-8px) scale(1.05);
-      background: rgba(255,255,255,0.2);
-    }
-    .card h3 {
-      font-size: 1.3rem;
-      margin-bottom: 1rem;
-      color: #ffd700;
-    }
-    .card p {
-      font-size: 1rem;
-      margin-bottom: 1.2rem;
-    }
-    .card a {
-      display: inline-block;
-      padding: 0.7rem 1.5rem;
-      background: #ff4757;
-      color: white;
-      font-weight: bold;
-      border-radius: 25px;
-      text-decoration: none;
-      transition: background 0.3s, box-shadow 0.3s;
-    }
-    .card a:hover {
-      background: #e84118;
-      box-shadow: 0 0 15px rgba(255,71,87,0.8);
-    }
-
-    footer {
-      background: rgba(0,0,0,0.7);
-      text-align: center;
-      padding: 1rem;
-      margin-top: 2rem;
-      font-size: 0.9rem;
-      backdrop-filter: blur(6px);
-    }
-
-    /* Animations */
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
-    }
-    @keyframes fadeInUp {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <!-- Navbar -->
   <nav>
-    <a href="#about">About</a>
-    <a href="#projects">Past Projects</a>
-    <a href="#upcoming">Upcoming</a>
-    <a href="#gallery">Gallery</a>
-    <a href="#connect">Connect</a>
+    <div class="logo">Families Only</div>
+    <ul>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#gallery">Gallery</a></li>
+      <li><a href="#connect">Connect</a></li>
+    </ul>
   </nav>
 
-  <!-- Hero -->
-  <header>
-    <h1>Families Only</h1>
-    <p>The official connection hub for Keanu Reeves</p>
+  <!-- Hero Section -->
+  <header class="hero">
+    <div class="hero-text">
+      <h1>Keanu Reeves</h1>
+      <p>The official hub to connect with Keanu Reeves.</p>
+      <a href="#connect" class="btn">Get Connected</a>
+    </div>
   </header>
 
   <!-- About -->
-  <section id="about">
+  <section id="about" class="section">
     <h2>About Me</h2>
     <p>
-      Keanu Reeves is an actor, musician, philanthropist, and entrepreneur. Known for iconic roles in 
-      <em>The Matrix</em>, <em>John Wick</em>, and <em>Speed</em>, he has captivated audiences worldwide 
-      with his talent and humility. Beyond acting, he co-founded Arch Motorcycle Company, 
-      played bass for the band Dogstar, and actively supports charitable causes.
+      Keanu Reeves is an actor, musician, philanthropist, and entrepreneur. Known for iconic roles in
+      <em>The Matrix</em>, <em>John Wick</em>, and <em>Speed</em>. Beyond acting, he co-founded Arch Motorcycle Company,
+      played bass for Dogstar, and actively supports charitable causes.
     </p>
   </section>
 
-  <!-- Past Projects -->
-  <section id="projects">
-    <h2>Past Projects & Movies</h2>
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <h2>Projects</h2>
     <p>
-      From action-packed thrillers to heartfelt dramas, Keanu Reeves has starred in numerous 
-      blockbusters including <em>Point Break</em>, <em>Constantine</em>, and <em>Bill & Ted’s Excellent Adventure</em>.
-    </p>
-  </section>
-
-  <!-- Upcoming -->
-  <section id="upcoming">
-    <h2>Upcoming Movies & Projects</h2>
-    <p>
-      Stay tuned for exciting upcoming projects — from new films in development to music with Dogstar 
-      and innovations with Arch Motorcycle.
+      From blockbusters like <em>Point Break</em> to music with Dogstar and motorcycle innovation at Arch Motorcycle.
     </p>
   </section>
 
   <!-- Gallery -->
-  <section id="gallery">
-    <h2>Photo Gallery</h2>
+  <section id="gallery" class="section">
+    <h2>Gallery</h2>
     <div class="gallery">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/e/e5/Keanu_Reeves_2013.jpg" alt="Keanu 1" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Keanu_Reeves_2019.jpg" alt="Keanu 2" />
-      <img src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Keanu_Reeves_2009.jpg" alt="Keanu 3" />
+      <img src="images/gallery1.jpg" alt="Keanu Image 1" />
+      <img src="images/gallery2.jpg" alt="Keanu Image 2" />
+      <img src="images/gallery3.jpg" alt="Keanu Image 3" />
     </div>
   </section>
 
-  <!-- Connect Section -->
-  <section id="connect">
-    <h2>Connect with Management</h2>
-    <div class="grid">
+  <!-- Connect -->
+  <section id="connect" class="section">
+    <h2>Connect</h2>
+    <div class="cards">
       <div class="card">
-        <h3>📅 Book an Appointment</h3>
-        <p>Schedule a meeting through Keanu Reeves' management team.</p>
-        <a href="mailto:appointments@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+        <h3>📅 Appointments</h3>
+        <p>Book through management.</p>
+        <a href="mailto:appointments@familiesonly.com">Contact</a>
       </div>
       <div class="card">
         <h3>🤝 Sponsorship</h3>
-        <p>Support projects, films, and events.</p>
-        <a href="mailto:sponsors@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+        <p>Partner with Keanu Reeves projects.</p>
+        <a href="mailto:sponsors@familiesonly.com">Contact</a>
       </div>
       <div class="card">
-        <h3>🛍 Merchandise</h3>
-        <p>Request official merchandise (via management only).</p>
-        <a href="mailto:merch@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-      </div>
-      <div class="card">
-        <h3>🎟 Fan Card</h3>
-        <p>Join Families Only and get your fan card.</p>
-        <a href="mailto:fans@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-      </div>
-      <div class="card">
-        <h3>💝 Donate to Charity</h3>
-        <p>Support Keanu Reeves' philanthropic projects.</p>
-        <a href="mailto:charity@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-      </div>
-      <div class="card">
-        <h3>🚀 Partnership</h3>
-        <p>Partner with Keanu Reeves and his ventures.</p>
-        <a href="mailto:partners@familiesonly.com" onclick="confirmAction(event)">Contact</a>
-      </div>
-      <div class="card">
-        <h3>💼 Job Vacancies</h3>
-        <p>Apply to join the management and Families Only team.</p>
-        <a href="mailto:jobs@familiesonly.com" onclick="confirmAction(event)">Contact</a>
+        <h3>💼 Jobs</h3>
+        <p>Apply to join Families Only team.</p>
+        <a href="mailto:jobs@familiesonly.com">Contact</a>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
   <footer>
-    &copy; 2025 Families Only. All rights reserved.
+    <p>&copy; 2025 Families Only. All rights reserved.</p>
   </footer>
 
-  <script>
-    // Confirm popup when clicking a contact button
-    function confirmAction(e) {
-      let proceed = confirm("You are about to contact Keanu Reeves' official management. Continue?");
-      if (!proceed) e.preventDefault();
-    }
-  </script>
+  <script src="script.js"></script>
 </body>
 </html>
