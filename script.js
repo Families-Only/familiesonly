@@ -1,4 +1,4 @@
-// Simple scroll animation
+// Scroll fade-in effect
 document.addEventListener("scroll", () => {
   const sections = document.querySelectorAll(".section");
   sections.forEach(sec => {
@@ -6,5 +6,13 @@ document.addEventListener("scroll", () => {
     if (rect.top < window.innerHeight - 100) {
       sec.classList.add("visible");
     }
+  });
+});
+
+// Smooth scroll for nav links
+document.querySelectorAll("nav a").forEach(anchor => {
+  anchor.addEventListener("click", function(e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({ behavior: "smooth" });
   });
 });
