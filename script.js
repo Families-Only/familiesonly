@@ -1,6 +1,6 @@
 // Scroll fade-in effect
 document.addEventListener("scroll", () => {
-  const sections = document.querySelectorAll(".section");
+  const sections = document.querySelectorAll(".section-bg");
   sections.forEach(sec => {
     const rect = sec.getBoundingClientRect();
     if (rect.top < window.innerHeight - 100) {
